@@ -32,13 +32,26 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 gem 'unicorn'
 
 # Use NewRelic monitoring for 100% uptime
 gem 'newrelic_rpm'
+
+# Use paperclip for file uploads
+gem 'paperclip'
+
+# Use s3 for file storage
+gem 'aws-sdk'
+
+group :development do
+  # For REPL, local/instance variable inspection, pretty stack frames all post exception
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
