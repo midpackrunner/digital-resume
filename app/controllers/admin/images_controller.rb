@@ -1,5 +1,9 @@
 module Admin
-  class ImagesController < ApplicationController
+  class ImagesController < AdminController
+    before_action :authenticate_user!
+
+    def index
+    end
 
     def new
       @image = Image.new
@@ -13,6 +17,15 @@ module Admin
       else
         render :new
       end
+    end
+
+    def edit
+    end
+
+    def update
+    end
+
+    def destroy
     end
 
     private
