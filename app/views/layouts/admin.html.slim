@@ -11,7 +11,12 @@ html
   body
     = render 'layouts/admin_nav'
     .container
+      - flash.each do |type, message|
+        .alert[class="alert-#{type}"]
+          = message
+
       = yield
 
     - if Rails.env.development?
       = debug params
+      = debug flash

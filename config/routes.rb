@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'homepage#show'
 
   namespace :admin do
-    root 'sessions#new', as: :admin_root
+    root 'dashboard#show', as: :dashboard
 
     resources :images
     get '/login' => 'sessions#new', as: :login
