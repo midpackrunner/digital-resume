@@ -12,7 +12,12 @@ gem 'slim-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
+# Use bootstrap styles in cms dash
 gem 'bootstrap-sass'
+
+# Use normalize for... well, normalization
+gem 'normalize-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
