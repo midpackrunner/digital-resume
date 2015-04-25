@@ -12,3 +12,6 @@ html
     = render 'layouts/admin_nav'
     .container
       = yield
+
+    - if Rails.env.development?
+      = debug params

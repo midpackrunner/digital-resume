@@ -3,6 +3,7 @@ module Admin
     before_action :authenticate_user!
 
     def index
+      @images = Image.paginate(page: params[:page])
     end
 
     def new
