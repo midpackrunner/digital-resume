@@ -56,10 +56,16 @@ gem 'paperclip'
 # Use s3 for file storage
 gem 'aws-sdk'
 
+# Use Ace code editor for contents
+gem 'ace-rails-ap'
+
 group :development do
   # For REPL, local/instance variable inspection, pretty stack frames all post exception
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # For model file schema annotation
+  gem 'annotate'
 end
 
 

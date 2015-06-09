@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ace-rails-ap (3.0.3)
     actionmailer (4.2.1)
       actionpack (= 4.2.1)
       actionview (= 4.2.1)
@@ -36,6 +37,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    annotate (2.6.10)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     arel (6.0.0)
     autoprefixer-rails (5.1.11)
       execjs
@@ -193,6 +197,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ace-rails-ap
+  annotate
   aws-sdk
   bcrypt (~> 3.1.7)
   better_errors

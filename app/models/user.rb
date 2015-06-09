@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string
+#
+
 class User < ActiveRecord::Base
   has_secure_password
 
