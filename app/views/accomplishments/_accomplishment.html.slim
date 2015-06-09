@@ -1,0 +1,4 @@
+li= accomplishment.description
+- if accomplishment.accomplishment_details.any?
+  ul
+    = render accomplishment.accomplishment_details.order(display_order: :asc)

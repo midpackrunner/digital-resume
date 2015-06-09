@@ -1,0 +1,15 @@
+.resume
+  section.header
+    h1= resume.name
+
+  section.skills
+    h2 Skills
+    = resume.skills.order(level: :desc, created_at: :asc).map {|skill| skill.name}.join(', ')
+
+  section.experience
+    h2 Experience
+    = render resume.positions.order(date_end: :desc)
+
+  section.education
+    h2 Education
+    = render resume.degrees.order(date_end: :desc)

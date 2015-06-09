@@ -1,0 +1,5 @@
+.position
+  .company= "#{position.company} (#{position.dates_employed})"
+  .title= position.title
+  ul.details
+    = render position.accomplishments.order(display_order: :asc)

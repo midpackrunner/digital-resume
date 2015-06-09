@@ -10,14 +10,17 @@
 
     &.experience,
     &.education {
-      .position {
+      .position,
+      .degree {
         margin: 10px auto;
 
-        .company {
+        .company,
+        .university{
           font-weight: bold;
         }
 
-        .title {
+        .title,
+        .awarded {
           font-style: italic;
         }
 
