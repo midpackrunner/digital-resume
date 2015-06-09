@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#resume' #'pages#homepage'
-  get '/resume' => 'pages#resume'
+  root 'resumes#show' #'pages#homepage'
+  get '/resume' => 'resumes#show'
   get '/cv' => redirect('/resume')
 
   namespace :admin do

@@ -1,10 +1,11 @@
 .resume
   section.header
     h1= resume.name
+    = render 'shared/ui/download_button'
 
   section.skills
     h2 Skills
-    = resume.skills.order(level: :desc, created_at: :asc).map {|skill| skill.name}.join(', ')
+    = resume.all_skills
 
   section.experience
     h2 Experience

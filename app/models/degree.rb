@@ -10,6 +10,8 @@
 #
 
 class Degree < ActiveRecord::Base
+  include PdfRenderable
+
   has_and_belongs_to_many :resumes
 
   def years_attending
@@ -20,6 +22,13 @@ class Degree < ActiveRecord::Base
       "#{start_year} - #{end_year}"
     else
       "#{end_year}"
+    end
+  end
+
+  def render(document)
+    document.paragraph do
+      document.header "#{university} (#{years_attending})", depth: 1
+      document.header degree, depth: 2
     end
   end
 end

@@ -1,3 +1,9 @@
+$arrowWidth: 30px;
+$arrowHeight: $arrowWidth;
+$pdfColor: #B00911;
+$hoverColor: lighten($pdfColor, 10%);
+$tinyPageWidth: 48px;
+
 .resume {
   width: 80%;
   margin: 20px auto;
@@ -7,6 +13,136 @@
   section {
     float: left;
     width: 100%;
+
+    &.header {
+      padding-top: 20px;
+      overflow: auto;
+      width: 100%;
+
+      h1 {
+        margin-top: 0;
+        float: left;
+      }
+
+      .download-button {
+        float: right;
+        display: inline-block;
+        border: 1px solid $pdfColor;
+        padding: 10px;
+        height: 20px;
+        width: 170px;
+        border-radius: 3px;
+        text-decoration: none;
+        box-shadow: 0 2px 4px #888;
+        -moz-box-shadow: 0 2px 4px #888;
+        -webkit-box-shadow: 0 2px 4px #888;
+
+        .text {
+          position: relative;
+          top: -31px;
+          left: 25px;
+          color: $pdfColor;
+          font-weight: bold;
+        }
+
+        .tiny-page {
+          width: $tinyPageWidth;
+          height: $tinyPageWidth * 1.35;
+          border: 1px solid lighten(gray, 5%);
+          display: inline-block;
+          position: relative;
+          top: -26px;
+          left: 5px;
+          background: #fff;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: -1px;
+            border-width: 0 $tinyPageWidth/3 $tinyPageWidth/3 0;
+            border-style: solid;
+            border-color: darken(white, 10%) white;
+            display: block;
+            width: 0;
+          }
+
+          .file-format {
+            font-size: 0.8em;
+            color: #fff;
+            background-color: $pdfColor;
+            position: absolute;
+            top: 5px;
+            left: -10px;
+            padding: 0 3px;
+            box-shadow: 0 2px 4px #888;
+            -moz-box-shadow: 0 2px 4px #888;
+            -webkit-box-shadow: 0 2px 4px #888;
+            text-shadow: 0 -1px 2px rgba(0,0,0,0.4);
+
+            &:after {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 0;
+              left: 0;
+              top: 100%;
+              border-width: 2px 5px;
+              border-style: solid;
+              border-color: darken($pdfColor, 20%) darken($pdfColor, 20%) transparent transparent;
+            }
+          }
+
+          .arrow {
+            width: $arrowWidth;
+            height: $arrowHeight;
+            position: relative;
+            display: inline-block;
+            margin: $arrowHeight/4 $arrowWidth/4;
+            top: 20px;
+            left: 2%;
+
+            &:before,
+            &:after {
+              content: '';
+              border-color: transparent;
+              border-style: solid;
+              position: absolute;
+            }
+
+            &.arrow-down {
+              &:before {
+                border: none;
+                background-color: $pdfColor;
+                height: 50%;
+                width: 43%;
+                top: 0;
+                left: 30%;
+              }
+
+              &:after {
+                left: 0;
+                top: 50%;
+                border-width: $arrowHeight/2 $arrowWidth/2;
+                border-top-color: $pdfColor;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          border-color: $hoverColor;
+          box-shadow: 0 1px 4px #888;
+          -moz-box-shadow: 0 1px 4px #888;
+          -webkit-box-shadow: 0 1px 4px #888;
+
+          .text {
+            color: $hoverColor
+          }
+        }
+      }
+    }
 
     &.experience,
     &.education {

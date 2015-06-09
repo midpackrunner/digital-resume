@@ -59,6 +59,9 @@ gem 'aws-sdk'
 # Use Ace code editor for contents
 gem 'ace-rails-ap'
 
+# Use Prawn for PDF generation
+gem 'prawn'
+
 group :development do
   # For REPL, local/instance variable inspection, pretty stack frames all post exception
   gem 'better_errors'
