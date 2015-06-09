@@ -11,4 +11,9 @@ html
     = yield :head
 
   body
-    = yield
+    .container
+      header
+        div.header
+          | [ Tim Woodbury ]
+      .contents
+        = yield
