@@ -2,7 +2,7 @@ class Admin::ImagesController < AdminController
   before_action :authenticate_user!
 
   def index
-    @images = Image.paginate(page: params[:page])
+    @images = Image.paginate(pages: params[:pages])
   end
 
   def new
