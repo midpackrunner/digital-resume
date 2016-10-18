@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609195001) do
+ActiveRecord::Schema.define(version: 20161018020111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 20150609195001) do
     t.datetime "file_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "periods", force: :cascade do |t|
+    t.datetime "date_start"
+    t.datetime "date_end"
+    t.integer  "owner_id"
+    t.string   "owner_type"
   end
 
   create_table "positions", force: :cascade do |t|
